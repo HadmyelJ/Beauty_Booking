@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautyBook Installation Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e91e63;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #e91e63;
+            padding-bottom: 10px;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #e91e63;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #e91e63;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .feature-item h4 {
+            color: #e91e63;
+            margin-top: 0;
+        }
+        ol, ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .btn {
+            display: inline-block;
+            background: #e91e63;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+        }
+        .btn:hover {
+            background: #c2185b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌸 BeautyBook Installation Guide</h1>
+        
+        <div class="success">
+            <strong>Welcome!</strong> This guide will help you install and set up your BeautyBook beauty booking platform.
+        </div>
+
+        <h2>📋 What You'll Get</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h4>👥 User Management</h4>
+                <p>Complete registration and login system for clients and professionals</p>
+            </div>
+            <div class="feature-item">
+                <h4>📅 Booking System</h4>
+                <p>Real-time appointment booking with availability management</p>
+            </div>
+            <div class="feature-item">
+                <h4>🖼️ Gallery</h4>
+                <p>Portfolio showcase for professionals with image upload</p>
+            </div>
+            <div class="feature-item">
+                <h4>💬 Messaging</h4>
+                <p>Direct communication between clients and professionals</p>
+            </div>
+            <div class="feature-item">
+                <h4>📱 Responsive Design</h4>
+                <p>Works perfectly on desktop, tablet, and mobile devices</p>
+            </div>
+            <div class="feature-item">
+                <h4>🔒 Secure</h4>
+                <p>Built with security best practices and data protection</p>
+            </div>
+        </div>
+
+        <h2>🛠️ Installation Steps</h2>
+
+        <div class="step">
+            <h3>Step 1: Download XAMPP</h3>
+            <p>Download and install XAMPP from the official website:</p>
+            <a href="https://www.apachefriends.org/" class="btn" target="_blank">Download XAMPP</a>
+            <p>Install XAMPP and start both <strong>Apache</strong> and <strong>MySQL</strong> services.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Create Database</h3>
+            <ol>
+                <li>Open your web browser and go to <code>http://localhost/phpmyadmin</code></li>
+                <li>Click "New" to create a new database</li>
+                <li>Name it <code>beauty_booking</code></li>
+                <li>Click "Create"</li>
+                <li>Select the new database and go to "Import" tab</li>
+                <li>Choose the <code>database_schema.sql</code> file from this package</li>
+                <li>Click "Go" to import the database structure</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Install Website Files</h3>
+            <ol>
+                <li>Copy all files from this package to your XAMPP <code>htdocs</code> folder</li>
+                <li>Default location: <code>C:\xampp\htdocs\beauty_booking\</code> (Windows)</li>
+                <li>Or: <code>/Applications/XAMPP/htdocs/beauty_booking/</code> (Mac)</li>
+                <li>Create an <code>uploads</code> folder inside your website directory</li>
+                <li>Inside <code>uploads</code>, create a <code>gallery</code> folder</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Configure Database Connection</h3>
+            <p>Open <code>config.php</code> and verify these settings:</p>
+            <div class="code-block">
+$host = 'localhost';
+$dbname = 'beauty_booking';
+$username = 'root';
+$password = ''; // Empty for XAMPP default
+            </div>
+            <p>These default settings should work with XAMPP out of the box.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 5: Test Your Installation</h3>
+            <ol>
+                <li>Open your web browser</li>
+                <li>Go to <code>http://localhost/beauty_booking/</code></li>
+                <li>You should see the BeautyBook homepage</li>
+                <li>Try registering a new account to test functionality</li>
+            </ol>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Important:</strong> Make sure both Apache and MySQL are running in XAMPP before accessing the website.
+        </div>
+
+        <h2>🚀 Getting Started</h2>
+
+        <div class="step">
+            <h3>Create Your First Accounts</h3>
+            <ol>
+                <li><strong>Professional Account:</strong> Register as a professional to offer services</li>
+                <li><strong>Client Account:</strong> Register as a client to book appointments</li>
+                <li>Complete your profiles with photos and information</li>
+                <li>Professionals: Add your services and set your availability</li>
+                <li>Clients: Browse professionals and book your first appointment</li>
+            </ol>
+        </div>
+
+        <h2>📁 File Structure</h2>
+        <div class="code-block">
+beauty_booking/
+├── index.php              # Homepage
+├── config.php             # Database settings
+├── login.php              # User login
+├── register.php           # User registration
+├── appointments.php       # Appointment management
+├── gallery.php            # Portfolio gallery
+├── messages.php           # Messaging system
+├── database_schema.sql    # Database structure
+├── css/styles.css         # Website styling
+├── js/main.js            # Interactive features
+└── uploads/gallery/       # Uploaded images
+        </div>
+
+        <h2>🔧 Troubleshooting</h2>
+
+        <div class="step">
+            <h3>Common Issues</h3>
+            <ul>
+                <li><strong>Can't access website:</strong> Make sure Apache is running in XAMPP</li>
+                <li><strong>Database errors:</strong> Check if MySQL is running and database exists</li>
+                <li><strong>Upload issues:</strong> Ensure uploads/gallery/ folder exists with write permissions</li>
+                <li><strong>Styling problems:</strong> Clear browser cache and check CSS file paths</li>
+            </ul>
+        </div>
+
+        <h2>🎨 Customization</h2>
+        <p>You can customize your BeautyBook installation:</p>
+        <ul>
+            <li><strong>Colors & Branding:</strong> Edit <code>css/styles.css</code></li>
+            <li><strong>Logo:</strong> Replace logo images in the CSS file</li>
+            <li><strong>Content:</strong> Modify text in PHP files</li>
+            <li><strong>Features:</strong> Add new services or extend functionality</li>
+        </ul>
+
+        <h2>📞 Support</h2>
+        <p>If you encounter any issues:</p>
+        <ol>
+            <li>Check this installation guide</li>
+            <li>Review the README.md file for detailed documentation</li>
+            <li>Check browser console (F12) for JavaScript errors</li>
+            <li>Verify XAMPP error logs for server issues</li>
+        </ol>
+
+        <div class="success">
+            <strong>🎉 Congratulations!</strong> Your BeautyBook platform is ready to connect beauty professionals with clients. Start building your beauty community today!
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="http://localhost/beauty_booking/" class="btn">Launch BeautyBook</a>
+        </div>
+    </div>
+</body>
+</html>
+
